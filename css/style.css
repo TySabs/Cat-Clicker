@@ -1,0 +1,41 @@
+li {
+  display: inline;
+  list-style-type: none;
+  background-color: #428bca;
+  color: #f9f9f9;
+  padding: 16px;
+  border-radius: 10%;
+  margin: 20px;
+}
+
+li:hover {
+  background-color: #5bc0de;
+  cursor: pointer;
+}
+
+#cat-info {
+  border-bottom: 2px solid #5bc0de;
+  padding-bottom: 10px;
+}
+
+#title {
+  display: inline;
+  margin-right: 20%;
+}
+
+#cat-name, #click-counter {
+  display: inline;
+  font-size: 2.5em;
+}
+
+
+#click-counter {
+  margin-left: 32px;
+  border: 2px solid #5bc0de;
+  padding: 0 20px;
+}
+
+#cat-img {
+  max-width: 600px;
+  margin: 10px 0 0 80px;
+}
