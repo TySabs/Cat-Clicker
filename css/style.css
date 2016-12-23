@@ -1,14 +1,14 @@
-li {
+button {
   display: inline;
-  list-style-type: none;
   background-color: #428bca;
   color: #f9f9f9;
-  padding: 16px;
+  width: 82px;
+  padding: 16px 0;
   border-radius: 10%;
-  margin: 20px;
+  margin: 4px 24px;
 }
 
-li:hover {
+button:hover {
   background-color: #5bc0de;
   cursor: pointer;
 }
@@ -20,22 +20,36 @@ li:hover {
 
 #title {
   display: inline;
-  margin-right: 20%;
+  margin-right: 16px;
 }
 
 #cat-name, #click-counter {
   display: inline;
-  font-size: 2.5em;
+  font-size: 2em;
+  font-family: Impact, "Arial Black", sans-serif;
 }
 
+#cat-level {
+  display: inline;
+  font-size: 1.5em;
+  color: #428bca;
+  font-family: "Trebuchet MS", Tahoma, sans-serif;
+  margin-right: 18px;
+}
 
 #click-counter {
-  margin-left: 32px;
+  margin-left: 16px;
   border: 2px solid #5bc0de;
+  border-radius: 10%;
   padding: 0 20px;
 }
 
 #cat-img {
   max-width: 600px;
-  margin: 10px 0 0 80px;
+  margin: 12px 0 0 24px;
+  box-shadow: 5px 5px 3px 3px #D7D9E0;
+}
+
+#cat-img:hover {
+  cursor: pointer;
 }

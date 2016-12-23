@@ -10,6 +10,7 @@ and open up ```index.html``` in a browser
 ## How It Works
 * The user can choose to display five different cat pictures
 * The user can then click on each cat and watch that cat's click count go up
+* As each cat's click count grows, the cat's title increases to stronger cats
 * To reset the click count, refresh the browser
 
 ## Purpose of this Project
