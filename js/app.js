@@ -41,12 +41,18 @@ var model = {
   ]
 };
 
-/************* Octopus (Controller) ***************/
-var octopus = {
+/************* controller ***************/
+var controller = {
   init: function() {
+    for (var i = 0; i < model.allCats.length; i++) {
+      var storageCount = localStorage.getItem(model.allCats[i].name);
+      if (storageCount > 0) {
+        model.allCats[i].clickCount = storageCount;
+      }
+    }
 
     // Get random starter cat index
-    var randomCatIndex = octopus.getRandomCat(0, 4);
+    var randomCatIndex = controller.getRandomCat(0, 4);
     // Display a random cat as currentCat on page load
     model.currentCat = model.allCats[randomCatIndex];
 
@@ -125,7 +131,7 @@ var octopus = {
       catLevel = "Sabretooth";
     }
     // Meow if cat levelled up
-    octopus.checkForMeow();
+    controller.checkForMeow();
     // Set currentCat's level
     model.currentCat.level = catLevel;
   },
@@ -134,8 +140,13 @@ var octopus = {
   incrementClickCount: function() {
     // Increment click count
     model.currentCat.clickCount++;
+    var currentCat = model.currentCat.name;
+    var clickCount = model.currentCat.clickCount;
+
+    localStorage.setItem(currentCat, clickCount);
+
     // Give cat appropriate level
-    octopus.getLevel();
+    controller.getLevel();
     // Re-render so proper information display
     currentCatView.render();
   }
@@ -154,7 +165,7 @@ var currentCatView = {
     // On click, add to the cat's clickCount
     this.catImageElem.addEventListener('click', function() {
 
-      octopus.incrementClickCount();
+      controller.incrementClickCount();
     });
 
     // Render proper view
@@ -163,7 +174,7 @@ var currentCatView = {
 
   render: function() {
     // Update DOM elements with values of currentCat
-    var currentCat = octopus.getCurrentCat();
+    var currentCat = controller.getCurrentCat();
     this.counterElem.textContent = currentCat.clickCount;
     this.catNameElem.textContent = currentCat.name;
     this.catLevelElem.textContent = currentCat.level;
@@ -183,7 +194,7 @@ var catListView = {
     var iCat, buttonElem;
 
     // Set allCats array to local variable & Set length array for for-loop
-    var allCats = octopus.getAllCats();
+    var allCats = controller.getAllCats();
     var allCatsLength = allCats.length;
 
     // Clear catListElem
@@ -202,7 +213,7 @@ var catListView = {
       // (connect value of cat variable to click event function)
       buttonElem.addEventListener('click', (function(thatCat) {
         return function() {
-          octopus.setCurrentCat(thatCat);
+          controller.setCurrentCat(thatCat);
           currentCatView.render();
         };
       })(iCat));
@@ -213,5 +224,5 @@ var catListView = {
   }
 };
 
-octopus.init();
-octopus.getLevel();
+controller.init();
+controller.getLevel();

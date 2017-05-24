@@ -16,7 +16,7 @@ and open up ```index.html``` in a browser
 ## Purpose of this Project
 * This project's goal was to build an app with MVC architecture using vanilla JavaScript
 * The app has a ***Model*** for holding data and a ***View*** for display and never the twain shall meet
-* The ***Octopus*** (aka Controller) acts as the decision maker and the glue between the ***Model*** and ***View***
+* The ***controller*** (aka Controller) acts as the decision maker and the glue between the ***Model*** and ***View***
 
 ### Credit
 Udacity Front-End Web Developer Nanodegree Program
